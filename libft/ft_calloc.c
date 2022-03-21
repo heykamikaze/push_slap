@@ -6,7 +6,7 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 18:30:18 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/03/20 16:51:42 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/03/21 16:03:53 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ void	*ft_calloc(size_t count, size_t size)
 
 	p = malloc (count * size);
 	if (p == 0)
-	{
-		free (p);
 		return (NULL);
-	}	
 	ft_bzero (p, count * size);
 	return (p);
 }

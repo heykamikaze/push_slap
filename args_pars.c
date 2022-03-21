@@ -6,7 +6,7 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 17:38:53 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/03/20 17:07:59 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/03/21 16:45:56 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,11 @@
 
 void	init_move(t_move *papillon, int argc)
 {
-	papillon->a = malloc(sizeof(t_mylist));
+	papillon->a = NULL;
 	papillon->b = NULL;
-	if (!papillon->a)
-	{
-		free (papillon->a);
-		exit (EXIT_FAILURE);
-	}
 	papillon->arr = malloc(sizeof(int) * (argc - 1));
 	if (!papillon->arr)
-	{
-		free(papillon->arr);
 		exit(EXIT_FAILURE);
-	}
-	papillon->a->next = NULL;
 }
 
 int	*ft_fill(int count, t_move *list, char **str)

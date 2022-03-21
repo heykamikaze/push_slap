@@ -6,7 +6,7 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 17:45:59 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/03/20 20:10:52 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/03/21 16:03:53 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ t_mylist	*ft_add_node(int value)
 
 	list = malloc(sizeof(t_mylist));
 	if (!list)
-	{
-		free(list);
 		return (NULL);
-	}
 	list->value = value;
 	list->next = NULL;
 	list->a_move = 0;

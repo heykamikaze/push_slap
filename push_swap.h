@@ -6,7 +6,7 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 15:38:38 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/03/20 20:21:33 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/03/21 15:58:49 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,6 @@ void		ft_rotate_b(t_mylist **stack_b, int *arr);
 int			ft_score_a(t_mylist *a, int value, int size_a);
 void		ft_fix(t_mylist **stack_a, int min);
 void		ft_print_rr(int *arr);
+void		ft_myfree(t_move *papillon);
 
 #endif

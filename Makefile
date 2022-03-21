@@ -1,7 +1,6 @@
 NAME = push_swap
 GCC = gcc
 CFLAGS = -Wall -Wextra -Werror 
-#-fsanitize=address
 LIBFT = ./libft/libft.a
 LIB_BINARY = -L ./libft -lft 
 SRCS = 	main.c \
