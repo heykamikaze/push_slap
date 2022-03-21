@@ -6,7 +6,7 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 15:35:33 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/03/21 16:52:54 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/03/21 16:57:12 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,8 @@ int	main(int argc, char **argv)
 	i = 0;
 	if (argc != 1)
 	{
-		ft_putstr_fd("1111\n", 2);
 		init_move(&papillon, argc);
-		ft_putstr_fd("22222\n", 2);
 		ft_fill(argc, &papillon, argv);
-		ft_putstr_fd("3333333\n", 2);
 		if_has_duplicates(&papillon, argc - 1);
 		ft_is_sorted(&papillon, argc - 1);
 		ft_fillist(&papillon, argc - 1);
