@@ -6,7 +6,7 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:01:10 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/03/18 21:32:17 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/05/17 19:56:01 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 # include <string.h>
 # include <unistd.h>
 # include <limits.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -53,5 +57,14 @@ char	*ft_strtrim(const char *s1, const char *set);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	**ft_split(char const *s, char c);
 void	ft_error(void);
+char	*get_next_line(int fd);
+int		ft_strlen_gnl(char *s);
+char	*ft_strchr_gnl(char *str, int c);
+char	*ft_strjoin_gnl(char *s1, char *s2);
+char	*ft_get_line(char *remains);
+char	*ft_get_line_after_n(char *remains);
+char	*ft_start(int fd, char *remains);
+char	*ft_substr_gnl(char *s, unsigned int start, int len);
+int		ft_strlcpy_gnl(char *dest, char *src, int destsize);
 
 #endif

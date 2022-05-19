@@ -6,7 +6,7 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:04:36 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/03/20 20:08:34 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/03/23 16:40:33 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	sort_over_five(t_move	*stacks)
 		size--;
 		size_a++;
 	}
-	ft_fix(&stacks->a, stacks->min);
+	ft_fix(&stacks->a, stacks->min, size_a);
 }
 
 void	ft_rotate_b(t_mylist **stack_b, int *arr)
@@ -53,9 +53,9 @@ void	ft_rotate_b(t_mylist **stack_b, int *arr)
 	while (score_min->score != (*stack_b)->score)
 	{
 		if (score_min->b_move == 0)
-			arr[RB] += ft_rb(stack_b, 0);
+			arr[RB] += ft_rb(stack_b, 1);
 		else
-			arr[RRB] += ft_rrb(stack_b, 0);
+			arr[RRB] += ft_rrb(stack_b, 1);
 	}
 }
 
@@ -82,7 +82,6 @@ void	ft_move_to_a(t_move *stack, int size_a, int *arr)
 		copy = copy->next;
 	}
 	ft_rotate(&stack->a, acc, size_a, arr);
-	ft_print_rr(arr);
 	ft_pa(&stack->a, &stack->b);
 }
 
@@ -90,12 +89,12 @@ void	ft_rotate(t_mylist **stack, int acc, int size, int *arr)
 {
 	if (size / 2 >= acc)
 		while (acc--)
-			arr[RA] += ft_ra(stack, 0);
+			arr[RA] += ft_ra(stack, 1);
 	else
 	{
 		acc = size - acc;
 		while (acc--)
-			arr[RRA] += ft_rra(stack, 0);
+			arr[RRA] += ft_rra(stack, 1);
 	}
 }
 

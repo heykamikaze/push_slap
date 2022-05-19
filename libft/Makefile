@@ -6,7 +6,7 @@
 #    By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 20:46:31 by nbenjami          #+#    #+#              #
-#    Updated: 2022/03/18 21:30:27 by nbenjami         ###   ########.fr        #
+#    Updated: 2022/05/18 18:42:47 by nbenjami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,9 @@ LIST =		ft_isalpha.c\
 			ft_strjoin.c\
 			ft_split.c\
 			ft_error.c\
-
+			get_next_line.c\
+			get_next_line_utils.c
+			
 OBJ = $(patsubst %.c, %.o,$(LIST))
 
 INC = libft.h

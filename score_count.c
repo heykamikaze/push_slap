@@ -6,7 +6,7 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 19:28:21 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/03/20 20:15:07 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/03/23 16:40:33 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,32 +63,25 @@ void	ft_find_score(t_move *stack, int size, int size_a)
 	}
 }
 
-void	ft_fix(t_mylist **stack_a, int min)
+void	ft_fix(t_mylist **stack_a, int min, int size_a)
 {
-	while ((*stack_a)->value != min)
-		ft_ra(stack_a, 1);
-}
+	t_mylist	*tmp;
+	int			i;
 
-void	ft_print_rr(int *arr)
-{
-	int	i;
-
+	tmp = *stack_a;
 	i = 0;
-	while ((i < arr[RA] && i < arr[RB]) && write(1, "rr\n", 3))
+	while (tmp->value != min)
+	{
+		tmp = tmp->next;
 		i++;
-	if (arr[RA] > arr[RB])
-		while (i < arr[RA] && write(1, "ra\n", 3))
-			i++;
+	}
+	if (size_a / 2 >= i)
+		while (i--)
+			ft_ra(stack_a, 1);
 	else
-		while (i < arr[RB] && write(1, "rb\n", 3))
-			i++;
-	i = 0;
-	while ((i < arr[RRA] && i < arr[RRB]) && write(1, "rrr\n", 4))
-		i++;
-	if (arr[RRA] > arr[RRB])
-		while (i < arr[RRA] && write(1, "rra\n", 4))
-			i++;
-	else
-		while (i < arr[RRB] && write(1, "rrb\n", 4))
-			i++;
+	{
+		i = size_a - i;
+		while (i--)
+			ft_rra(stack_a, 1);
+	}
 }

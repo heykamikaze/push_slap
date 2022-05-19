@@ -6,7 +6,7 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 17:38:53 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/03/21 16:45:56 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/05/19 16:29:30 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ int	ft_is_sorted(t_move *papillon, int n)
 		i++;
 	}
 	exit(EXIT_SUCCESS);
+	return (0);
 }
 
 void	ft_fillist(t_move *papillon, int n)

@@ -6,7 +6,7 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 15:38:38 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/03/21 15:58:49 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/05/19 17:29:31 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,13 +73,22 @@ void		sort5_additionals(t_move *papillon, int code);
 void		ft_arr_sort(t_move *papillon, int argc);
 void		sort_over_five(t_move *stacks);
 void		ft_move_to_b(t_move *stacks);
-void		ft_move_to_a(t_move *stack, int size_a, int *arr);
+void		ft_move_to_a(t_move *stack, int size_a, int *arr); //, int *arr add
 void		ft_rotate(t_mylist **stack, int acc, int size, int *arr);
 void		ft_find_score(t_move *stack, int size, int size_a);
 void		ft_rotate_b(t_mylist **stack_b, int *arr);
 int			ft_score_a(t_mylist *a, int value, int size_a);
-void		ft_fix(t_mylist **stack_a, int min);
-void		ft_print_rr(int *arr);
+void		ft_fix(t_mylist **stack_a, int min, int size_a);
 void		ft_myfree(t_move *papillon);
+int	ft_strcmp(char *s1, char *s2);
+void	ft_commands(char *cmd, t_move *papillon, int flag_correct);
+void	ft_myfree_c(t_move *papillon);
+int	ft_pa_checker(t_mylist **a_head, t_mylist **b_head);
+int	ft_pb_checker(t_mylist **stack_a, t_mylist **stack_b);
+int	ft_rrr_checker(t_move *stack);
+int	ft_ss_checker(t_move *stack);
+int	ft_rr_checker(t_move *stack);
+int	checklst_sort(t_mylist *head, int min);
+int	checklsts_helper(t_mylist *dup, t_mylist *head, int min);
 
 #endif
