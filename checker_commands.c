@@ -1,9 +1,16 @@
-//check if stack b is empty
-//remove printng command is terminla
-//check if all the commands are present in check func
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker_commands.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/19 17:48:15 by nbenjami          #+#    #+#             */
+/*   Updated: 2022/05/19 17:48:24 by nbenjami         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 int	ft_pa_checker(t_mylist **a_head, t_mylist **b_head)
 {
@@ -17,7 +24,6 @@ int	ft_pa_checker(t_mylist **a_head, t_mylist **b_head)
 	}
 	return (1);
 }
-
 
 int	ft_pb_checker(t_mylist **stack_a, t_mylist **stack_b)
 {

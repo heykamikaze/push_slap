@@ -6,7 +6,7 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 17:45:59 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/05/19 16:46:15 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/05/19 17:51:10 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ t_mylist	*ft_add_node(int value)
 	list->next = NULL;
 	list->a_move = 0;
 	list->b_move = 0;
-	// printf("%d", list->value);//remove this
 	return (list);
 }
 

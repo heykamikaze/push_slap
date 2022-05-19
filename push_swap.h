@@ -6,7 +6,7 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 15:38:38 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/05/19 17:29:31 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/05/19 17:50:45 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,15 +80,15 @@ void		ft_rotate_b(t_mylist **stack_b, int *arr);
 int			ft_score_a(t_mylist *a, int value, int size_a);
 void		ft_fix(t_mylist **stack_a, int min, int size_a);
 void		ft_myfree(t_move *papillon);
-int	ft_strcmp(char *s1, char *s2);
-void	ft_commands(char *cmd, t_move *papillon, int flag_correct);
-void	ft_myfree_c(t_move *papillon);
-int	ft_pa_checker(t_mylist **a_head, t_mylist **b_head);
-int	ft_pb_checker(t_mylist **stack_a, t_mylist **stack_b);
-int	ft_rrr_checker(t_move *stack);
-int	ft_ss_checker(t_move *stack);
-int	ft_rr_checker(t_move *stack);
-int	checklst_sort(t_mylist *head, int min);
-int	checklsts_helper(t_mylist *dup, t_mylist *head, int min);
+int			ft_strcmp(char *s1, char *s2);
+void		ft_commands(char *cmd, t_move *papillon);
+void		ft_myfree_c(t_move *papillon);
+int			ft_pa_checker(t_mylist **a_head, t_mylist **b_head);
+int			ft_pb_checker(t_mylist **stack_a, t_mylist **stack_b);
+int			ft_rrr_checker(t_move *stack);
+int			ft_ss_checker(t_move *stack);
+int			ft_rr_checker(t_move *stack);
+int			checklst_sort(t_mylist *head, int min);
+int			checklsts_helper(t_mylist *tmp, t_mylist *head, int min);
 
 #endif

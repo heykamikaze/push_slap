@@ -23,7 +23,8 @@ SRCS_B =	checker_mine.c \
 		lists_utils.c \
 		operations_optimization.c \
 		score_count.c \
-		checker_commands.c
+		checker_commands.c \
+		check_utils.c
 
 OBJS_A = $(SRCS_A:.c=.o)
 
