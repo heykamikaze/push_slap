@@ -6,7 +6,7 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 18:10:31 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/05/19 17:48:57 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/05/19 18:00:39 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_check(t_move *papillon)
 		free(cmd);
 }
 
-int	checklsts_helper(t_mylist *tmp, t_mylist *head, int min)
+int	ft_checklsts_helper(t_mylist *tmp, t_mylist *head, int min)
 {
 	while (tmp->value != min)
 	{
@@ -67,12 +67,12 @@ int	checklsts_helper(t_mylist *tmp, t_mylist *head, int min)
 	return (1);
 }
 
-int	checklst_sort(t_mylist *head, int min)
+int	ft_checklst_sort(t_mylist *head, int min)
 {
 	t_mylist	*next_head;
-	t_mylist	*dup;
+	t_mylist	*tmp;
 
-	dup = head;
+	tmp = head;
 	while (head && head->value != min)
 		head = head->next;
 	next_head = head->next;
@@ -83,13 +83,13 @@ int	checklst_sort(t_mylist *head, int min)
 		head = head->next;
 		next_head = head->next;
 	}
-	if (head->value > dup->value && dup->value != min)
+	if (head->value > tmp->value && tmp->value != min)
 		return (0);
-	else if (head->value > dup->value && dup->value == min)
+	else if (head->value > tmp->value && tmp->value == min)
 		return (1);
-	head = dup;
-	dup = dup->next;
-	return (checklsts_helper(dup, head, min));
+	head = tmp;
+	tmp = tmp->next;
+	return (ft_checklsts_helper(tmp, head, min));
 }
 
 int	main(int argc, char **argv)
@@ -104,10 +104,11 @@ int	main(int argc, char **argv)
 	ft_fillist(&papillon, argc - 1);
 	ft_check(&papillon);
 	size = ft_lstsize(papillon.a);
-	if (size == 1 || (checklst_sort(papillon.a, papillon.a->value) \
+	if (size == 1 || (ft_checklst_sort(papillon.a, papillon.a->value) \
 	&& size == ft_lstsize(papillon.a)))
 		ft_putstr_fd("OK\n", 1);
 	else
 		ft_putstr_fd("KO\n", 1);
+	ft_myfree_c(&papillon, argv);
 	return (0);
 }
