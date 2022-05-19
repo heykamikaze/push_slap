@@ -6,17 +6,17 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 17:47:28 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/05/19 18:00:15 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/05/19 18:15:30 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_myfree_c(t_move *papillon, char **argv)
+void	ft_myfree_c(t_move *papillon, char **argv)//smwhr here is the malloc error
 {
 	t_mylist	*tmp;
 	int			i;
-	
+
 	tmp = papillon->a;
 	while (papillon->a)
 	{
