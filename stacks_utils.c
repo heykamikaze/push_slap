@@ -6,7 +6,7 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 17:45:59 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/05/19 17:51:10 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/05/20 20:20:24 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,5 @@ void	ft_arr_sort(t_move *papillon, int argc)
 	papillon->min = papillon->arr[0];
 	papillon->max = papillon->arr[argc - 2];
 	free(papillon->arr);
+	papillon->arr = NULL;
 }

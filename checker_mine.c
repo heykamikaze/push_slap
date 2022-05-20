@@ -6,7 +6,7 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 18:10:31 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/05/19 18:00:39 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/05/20 20:45:44 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 void	ft_commands(char *cmd, t_move *papillon)
 {
-	if (ft_strcmp(cmd, "pa\n"))
+	if (ft_strncmp(cmd, "pa\n", ft_strlen(cmd)) == 0)
 		ft_pa_checker(&papillon->a, &papillon->b);
-	else if (ft_strcmp(cmd, "pb\n"))
+	else if (ft_strncmp(cmd, "pb\n", ft_strlen(cmd)) == 0)
 		ft_pb_checker(&papillon->a, &papillon->b);
-	else if (ft_strcmp(cmd, "sa\n"))
+	else if (ft_strncmp(cmd, "sa\n", ft_strlen(cmd)) == 0)
 		ft_sa(&papillon->a, 0);
-	else if (ft_strcmp(cmd, "sb\n"))
+	else if (ft_strncmp(cmd, "sb\n", ft_strlen(cmd)) == 0)
 		ft_sb(&papillon->b, 0);
-	else if (ft_strcmp(cmd, "ra\n"))
+	else if (ft_strncmp(cmd, "ra\n", ft_strlen(cmd)) == 0)
 		ft_ra(&(papillon->a), 0);
-	else if (ft_strcmp(cmd, "rb\n"))
+	else if (ft_strncmp(cmd, "rb\n", ft_strlen(cmd)) == 0)
 		ft_rb(&(papillon->b), 0);
-	else if (ft_strcmp(cmd, "rra\n"))
+	else if (ft_strncmp(cmd, "rra\n", ft_strlen(cmd)) == 0)
 		ft_rra(&(papillon->a), 0);
-	else if (ft_strcmp(cmd, "rrb\n"))
-		ft_rrb(&(papillon->b), 0);
-	else if (ft_strcmp(cmd, "rrr\n"))
+	else if (ft_strncmp(cmd, "rrb\n", ft_strlen(cmd)) == 0)
+		ft_rrb(&(papillon->b), 1);
+	else if (ft_strncmp(cmd, "rrr\n", ft_strlen(cmd)) == 0)
 		ft_rrr_checker(papillon);
-	else if (ft_strcmp(cmd, "rr\n"))
+	else if (ft_strncmp(cmd, "rr\n", ft_strlen(cmd)) == 0)
 		ft_rr_checker(papillon);
-	else if (ft_strcmp(cmd, "ss\n"))
+	else if (ft_strncmp(cmd, "ss\n", ft_strlen(cmd)) == 0)
 		ft_ss_checker(papillon);
 	else
 		ft_error();
@@ -45,7 +45,7 @@ void	ft_check(t_move *papillon)
 	char	*cmd;
 
 	cmd = get_next_line(0);
-	while (cmd && cmd[0] != '\n')
+	while (cmd)
 	{
 		ft_commands(cmd, papillon);
 		free(cmd);
@@ -53,6 +53,7 @@ void	ft_check(t_move *papillon)
 	}
 	if (cmd)
 		free(cmd);
+	write(2, "here", 4);
 }
 
 int	ft_checklsts_helper(t_mylist *tmp, t_mylist *head, int min)
@@ -104,11 +105,17 @@ int	main(int argc, char **argv)
 	ft_fillist(&papillon, argc - 1);
 	ft_check(&papillon);
 	size = ft_lstsize(papillon.a);
-	if (size == 1 || (ft_checklst_sort(papillon.a, papillon.a->value) \
-	&& size == ft_lstsize(papillon.a)))
+	if (ft_checklst_sort(papillon.a, papillon.a->value) \
+	&& size == ft_lstsize(papillon.a) && ft_lstsize(papillon.b) == 0)
+	{
 		ft_putstr_fd("OK\n", 1);
+	}
 	else
+	{
+		write(1, "not", 3);
 		ft_putstr_fd("KO\n", 1);
-	ft_myfree_c(&papillon, argv);
+	}
+	ft_myfree_c(&papillon);
+	// exit(1);
 	return (0);
 }

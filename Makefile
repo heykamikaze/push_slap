@@ -1,7 +1,7 @@
 NAME_A = push_swap
 NAME_B = checker
 GCC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror 
 LIBFT = ./libft/libft.a
 LIB_BINARY = -L ./libft -lft 
 SRCS_A = 	main.c \

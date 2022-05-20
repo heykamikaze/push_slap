@@ -6,7 +6,7 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 19:20:45 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/03/20 20:15:22 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/05/20 21:25:42 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_rra(t_mylist **stack_a, int n)
 	t_mylist	*a;
 
 	a = *stack_a;
-	if (!a)
+	if (!a || a->next == NULL)
 		return (1);
 	tmp = a;
 	while (a->next)
@@ -58,7 +58,7 @@ int	ft_rrb(t_mylist **stack_b, int n)
 	t_mylist	*b;
 
 	b = *stack_b;
-	if (!b)
+	if (!b || b->next == NULL)
 		return (1);
 	tmp = b;
 	while (b->next)
