@@ -6,7 +6,7 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 18:10:31 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/05/23 17:44:17 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/05/23 18:06:59 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,18 +97,21 @@ int	main(int argc, char **argv)
 	t_move	papillon;
 	int		size;
 
-	init_move(&papillon, argc);
-	ft_fill(argc, &papillon, argv);
-	if_has_duplicates(&papillon, argc - 1);
-	ft_is_sorted(&papillon, argc - 1);
-	ft_fillist(&papillon, argc - 1);
-	ft_check(&papillon);
-	size = ft_lstsize(papillon.a);
-	if (ft_checklst_sort(papillon.a, papillon.a->value) \
-		&& size == ft_lstsize(papillon.a))
-		ft_putstr_fd("OK\n", 1);
-	else
-		ft_putstr_fd("KO\n", 1);
-	ft_myfree_c(&papillon);
+	if (argc != 1)
+	{
+		init_move(&papillon, argc);
+		ft_fill(argc, &papillon, argv);
+		if_has_duplicates(&papillon, argc - 1);
+		ft_is_sorted(&papillon, argc - 1);
+		ft_fillist(&papillon, argc - 1);
+		ft_check(&papillon);
+		size = ft_lstsize(papillon.a);
+		if (ft_checklst_sort(papillon.a, papillon.a->value) \
+			&& size == ft_lstsize(papillon.a))
+			ft_putstr_fd("OK\n", 1);
+		else
+			ft_putstr_fd("KO\n", 1);
+		ft_myfree_c(&papillon);
+	}
 	return (0);
 }
