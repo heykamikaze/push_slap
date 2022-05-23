@@ -6,7 +6,7 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 18:10:31 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/05/20 20:45:44 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/05/23 17:44:17 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_commands(char *cmd, t_move *papillon)
 	else if (ft_strncmp(cmd, "rra\n", ft_strlen(cmd)) == 0)
 		ft_rra(&(papillon->a), 0);
 	else if (ft_strncmp(cmd, "rrb\n", ft_strlen(cmd)) == 0)
-		ft_rrb(&(papillon->b), 1);
+		ft_rrb(&(papillon->b), 0);
 	else if (ft_strncmp(cmd, "rrr\n", ft_strlen(cmd)) == 0)
 		ft_rrr_checker(papillon);
 	else if (ft_strncmp(cmd, "rr\n", ft_strlen(cmd)) == 0)
@@ -45,7 +45,7 @@ void	ft_check(t_move *papillon)
 	char	*cmd;
 
 	cmd = get_next_line(0);
-	while (cmd)
+	while (cmd && cmd[0] != '\n')
 	{
 		ft_commands(cmd, papillon);
 		free(cmd);
@@ -53,7 +53,6 @@ void	ft_check(t_move *papillon)
 	}
 	if (cmd)
 		free(cmd);
-	write(2, "here", 4);
 }
 
 int	ft_checklsts_helper(t_mylist *tmp, t_mylist *head, int min)
@@ -106,16 +105,10 @@ int	main(int argc, char **argv)
 	ft_check(&papillon);
 	size = ft_lstsize(papillon.a);
 	if (ft_checklst_sort(papillon.a, papillon.a->value) \
-	&& size == ft_lstsize(papillon.a) && ft_lstsize(papillon.b) == 0)
-	{
+		&& size == ft_lstsize(papillon.a))
 		ft_putstr_fd("OK\n", 1);
-	}
 	else
-	{
-		write(1, "not", 3);
 		ft_putstr_fd("KO\n", 1);
-	}
 	ft_myfree_c(&papillon);
-	// exit(1);
 	return (0);
 }

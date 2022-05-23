@@ -6,7 +6,7 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 15:38:38 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/05/20 20:09:47 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/05/23 17:37:16 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void		sort5_additionals(t_move *papillon, int code);
 void		ft_arr_sort(t_move *papillon, int argc);
 void		sort_over_five(t_move *stacks);
 void		ft_move_to_b(t_move *stacks);
-void		ft_move_to_a(t_move *stack, int size_a, int *arr); //, int *arr add
+void		ft_move_to_a(t_move *stack, int size_a, int *arr);
 void		ft_rotate(t_mylist **stack, int acc, int size, int *arr);
 void		ft_find_score(t_move *stack, int size, int size_a);
 void		ft_rotate_b(t_mylist **stack_b, int *arr);
@@ -90,7 +90,7 @@ int			ft_ss_checker(t_move *stack);
 int			ft_rr_checker(t_move *stack);
 int			ft_checklst_sort(t_mylist *head, int min);
 int			ft_checklsts_helper(t_mylist *tmp, t_mylist *head, int min);
-void	ft_lstclear(t_mylist **lst);
-void	ft_lstdelone(t_mylist *lst);
+void		ft_lstclear(t_mylist **lst);
+void		ft_lstdelone(t_mylist *lst);
 
 #endif

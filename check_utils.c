@@ -6,7 +6,7 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 17:47:28 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/05/20 20:17:10 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/05/23 17:36:48 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,80 +32,15 @@ void	ft_lstclear(t_mylist **lst)
 	}
 }
 
-// void	ft_lstclear(t_mylist **lst, void (*del)(void*))
-// {
-// 	t_mylist	*src;
-
-// 	while ((*lst))
-// 	{
-// 		src = *lst;
-// 		del(src->content);
-// 		*lst = (*lst)->next;
-// 		free(src);
-// 	}
-// }
-
-// void	ft_lstclear(t_mylist **lst, void (*del)(void*))
-// {
-// 	t_mylist	*src;
-
-// 	while ((*lst))
-// 	{
-// 		src = *lst;
-// 		del(src->content);
-// 		*lst = (*lst)->next;
-// 		free(src);
-// 	}
-// }
-
-
-void	ft_myfree_c(t_move *papillon)//smwhr here is the malloc error
+void	ft_myfree_c(t_move *papillon)
 {
-	// t_mylist	*tmp;
-	// t_mylist	*tmp_b;
-
-	// tmp_b = papillon->b;
-	// tmp = papillon->a;
-	// while (papillon->a)
-	// {
-	// 	tmp = tmp->next;
-	// 	free (papillon->a);
-	// 	papillon->a = tmp;
-	// }
-	// tmp_b = papillon->b;
-	// if (papillon->b)
-		// {
-		// 	while (papillon->b)
-		// 	{
-		// 		tmp_b = tmp_b->next;
-		// 		free (papillon->b);
-		// 		papillon->b = tmp_b;
-		// 	}
-		// }
-	// if (papillon->b)
-	// 	free (papillon->b);
 	if (papillon->arr)
 		free(papillon->arr);
-	// if (papillon)
-	// {
-		if (papillon->a)
-			ft_lstclear(&(papillon->a));
-		if (papillon->b)
-			ft_lstclear(&(papillon->b));
-		// free(papillon);
-	}
-	// free (tmp);
-	// i = 1;
-	// if (argv)
-	// {
-		// while (i != argc - 1)
-		// {
-		// 	free(argv[i]);
-		// 	i++;
-		// }
-		// free(argv);
-	// }
-
+	if (papillon->a)
+		ft_lstclear(&(papillon->a));
+	if (papillon->b)
+		ft_lstclear(&(papillon->b));
+}
 
 int	ft_strcmp(char *s1, char *s2)
 {
