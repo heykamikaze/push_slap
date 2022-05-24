@@ -48,7 +48,7 @@ clean:
 		make -C ./libft/ clean
 
 fclean: clean
-		rm -f $(NAME_B) (NAME_B)
+		rm -f $(NAME_A) $(NAME_B)
 		make -C ./libft/ fclean
 
 re: fclean all
