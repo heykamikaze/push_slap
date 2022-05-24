@@ -44,11 +44,11 @@ $(LIBFT):
 		make -C ./libft/
 
 clean:
-		rm -f $(OBJS)
+		rm -f $(OBJS_A) $(OBJS_B)
 		make -C ./libft/ clean
 
 fclean: clean
-		rm -f $(NAME)
+		rm -f $(NAME_B) (NAME_B)
 		make -C ./libft/ fclean
 
 re: fclean all

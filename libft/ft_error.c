@@ -6,7 +6,7 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 21:29:28 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/03/20 20:18:30 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/05/24 17:11:23 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_error(void)
 {
-	write(1, "Error\n", 7);
+	write(2, "Error\n", 7);
 	exit(1);
 }
