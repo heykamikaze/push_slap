@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_mine.c                                     :+:      :+:    :+:   */
+/*   checker_mine_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 18:10:31 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/05/24 17:12:14 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/06/02 14:47:52 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ft_check(t_move *papillon)
 
 int	ft_checklsts_helper(t_mylist *tmp, t_mylist *head, int min)
 {
-	while (tmp->value != min)
+	while (tmp && tmp->value != min)
 	{
 		if (head->value > tmp->value)
 			return (0);
@@ -96,17 +96,19 @@ int	main(int argc, char **argv)
 {
 	t_move	papillon;
 	int		size;
+	int		size2;
 
-	if (argc != 1)
+	if (argc > 2)
 	{
-		init_move(&papillon, argc);
+		ft_init_move(&papillon, argc);
 		ft_fill(argc, &papillon, argv);
 		if_has_duplicates(&papillon, argc - 1);
 		ft_fillist(&papillon, argc - 1);
 		ft_check(&papillon);
 		size = ft_lstsize(papillon.a);
+		size2 = ft_lstsize(papillon.b);
 		if (ft_checklst_sort(papillon.a, papillon.a->value) \
-			&& size == ft_lstsize(papillon.a))
+			&& size == ft_lstsize(papillon.a) && size2 == 0)
 			ft_putstr_fd("OK\n", 1);
 		else
 			ft_putstr_fd("KO\n", 1);

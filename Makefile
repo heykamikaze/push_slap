@@ -1,7 +1,7 @@
 NAME_A = push_swap
 NAME_B = checker
 GCC = gcc
-CFLAGS = -Wall -Wextra -Werror 
+CFLAGS = -Wall -Wextra -Werror
 LIBFT = ./libft/libft.a
 LIB_BINARY = -L ./libft -lft 
 SRCS_A = 	main.c \
@@ -14,7 +14,7 @@ SRCS_A = 	main.c \
 		operations_optimization.c \
 		score_count.c \
 		
-SRCS_B =	checker_mine.c \
+SRCS_B =	checker_mine_bonus.c \
 		operations.c \
 		sort_over_five.c \
 		sort.c \
@@ -23,8 +23,8 @@ SRCS_B =	checker_mine.c \
 		lists_utils.c \
 		operations_optimization.c \
 		score_count.c \
-		checker_commands.c \
-		check_utils.c
+		checker_commands_bonus.c \
+		check_utils_bonus.c
 
 OBJS_A = $(SRCS_A:.c=.o)
 

@@ -6,13 +6,13 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 17:38:53 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/05/20 16:41:44 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/05/30 17:41:09 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_move(t_move *papillon, int argc)
+void	ft_init_move(t_move *papillon, int argc)
 {
 	papillon->a = NULL;
 	papillon->b = NULL;

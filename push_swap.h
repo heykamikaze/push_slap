@@ -6,7 +6,7 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 15:38:38 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/05/23 17:37:16 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/05/30 17:45:34 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int			*ft_fill(int count, t_move *list, char **str);
 t_mylist	*ft_add_elem(int value);
 int			if_has_duplicates(t_move *papillon, int n);
 int			ft_is_sorted(t_move *papillon, int n);
-void		init_move(t_move *papillon, int argc);
+void		ft_init_move(t_move *papillon, int argc);
 void		ft_fillist(t_move *papillon, int n);
 t_mylist	*ft_add_node(int value);
 int			ft_sa(t_mylist **stack, int n);
@@ -71,7 +71,7 @@ int			ft_sort4(t_mylist *stack_a, t_move *papillon);
 int			ft_sort5(t_mylist *stack_a, t_move *papillon);
 void		sort5_additionals(t_move *papillon, int code);
 void		ft_arr_sort(t_move *papillon, int argc);
-void		sort_over_five(t_move *stacks);
+void		ft_sort_over_five(t_move *stacks);
 void		ft_move_to_b(t_move *stacks);
 void		ft_move_to_a(t_move *stack, int size_a, int *arr);
 void		ft_rotate(t_mylist **stack, int acc, int size, int *arr);

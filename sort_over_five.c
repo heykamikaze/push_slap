@@ -6,13 +6,13 @@
 /*   By: nbenjami <nbenjami@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:04:36 by nbenjami          #+#    #+#             */
-/*   Updated: 2022/03/23 16:40:33 by nbenjami         ###   ########.fr       */
+/*   Updated: 2022/05/30 17:45:41 by nbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_over_five(t_move	*stacks)
+void	ft_sort_over_five(t_move	*stacks)
 {
 	int	size;
 	int	size_a;
