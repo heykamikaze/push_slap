@@ -50,4 +50,4 @@ Execution: ./checker
 Graphic representation of sorting algorithm in progress: 
 
 
-![gif](https://github.com/heykamikaze/push_slap/blob/master/ezgif.com-gif-maker%20(1).gif)
+![gif](https://github.com/heykamikaze/push_slap/blob/master/src/ezgif.com-gif-maker%20(1).gif)
